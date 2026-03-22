@@ -6,4 +6,12 @@
     <Nullable>enable</Nullable>
     <IsAotCompatible>true</IsAotCompatible>
   </PropertyGroup>
+  <PropertyGroup>
+    <PackageId>Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System</PackageId>
+    <RootNamespace>Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System</RootNamespace>
+    <AssemblyName>Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System</AssemblyName>
+    <Authors>Dmitry Kurochkin</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/kudima03/Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System</PackageProjectUrl>
+  </PropertyGroup>
 </Project>
