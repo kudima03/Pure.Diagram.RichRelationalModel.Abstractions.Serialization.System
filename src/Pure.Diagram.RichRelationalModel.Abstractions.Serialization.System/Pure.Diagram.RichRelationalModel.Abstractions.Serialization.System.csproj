@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <IsAotCompatible>true</IsAotCompatible>
+    <IsAotCompatible>false</IsAotCompatible>
   </PropertyGroup>
   <PropertyGroup>
     <PackageId>Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System</PackageId>
@@ -13,5 +13,13 @@
     <Authors>Dmitry Kurochkin</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/kudima03/Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System</PackageProjectUrl>
+    <!--<EnablePackageValidation>true</EnablePackageValidation>
+    <PackageValidationBaselineVersion>0.1.0-preview.0.1.0</PackageValidationBaselineVersion>-->
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference
+      Include="Pure.Diagram.RichRelationalModel.Abstractions"
+      Version="0.1.0-preview.0.1.0"
+    />
+  </ItemGroup>
 </Project>
