@@ -50,7 +50,7 @@ public sealed record DiagramRichRelationalModelConverterTests
         Guid seriesDiagramId = new Guid();
         RandomString seriesLabel = new RandomString(new Char('a'), new Char('z'));
         RandomString seriesSource = new RandomString(new Char('a'), new Char('z'));
-        SeriesRichRelationalModel series = new SeriesRichRelationalModel(
+        DiagramSeriesRichRelationalModel series = new DiagramSeriesRichRelationalModel(
             seriesId,
             seriesDiagramId,
             seriesLabel,
@@ -115,7 +115,7 @@ public sealed record DiagramRichRelationalModelConverterTests
             typeId,
             new DiagramTypeRichRelationalModel(typeId, typeName),
             [
-                new SeriesRichRelationalModel(
+                new DiagramSeriesRichRelationalModel(
                     seriesId,
                     seriesDiagramId,
                     seriesLabel,
@@ -170,7 +170,7 @@ public sealed record DiagramRichRelationalModelConverterTests
                 new RandomString(new Char('a'), new Char('z'))
             ),
             [
-                new SeriesRichRelationalModel(
+                new DiagramSeriesRichRelationalModel(
                     new Guid(),
                     new Guid(),
                     new RandomString(new Char('a'), new Char('z')),
@@ -244,19 +244,19 @@ public sealed record DiagramRichRelationalModelConverterTests
                 new RandomString(new Char('a'), new Char('z'))
             ),
             [
-                new SeriesRichRelationalModel(
+                new DiagramSeriesRichRelationalModel(
                     new Guid(),
                     new Guid(),
                     new RandomString(new Char('a'), new Char('z')),
                     new RandomString(new Char('a'), new Char('z'))
                 ),
-                new SeriesRichRelationalModel(
+                new DiagramSeriesRichRelationalModel(
                     new Guid(),
                     new Guid(),
                     new RandomString(new Char('a'), new Char('z')),
                     new RandomString(new Char('a'), new Char('z'))
                 ),
-                new SeriesRichRelationalModel(
+                new DiagramSeriesRichRelationalModel(
                     new Guid(),
                     new Guid(),
                     new RandomString(new Char('a'), new Char('z')),
