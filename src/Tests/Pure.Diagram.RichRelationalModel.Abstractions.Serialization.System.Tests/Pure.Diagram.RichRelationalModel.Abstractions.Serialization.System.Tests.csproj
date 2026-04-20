@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="10.0.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.4.0" />
-    <PackageReference Include="Pure.Diagram.RichRelationalModel" Version="0.1.0-preview.0.1.0" />
+    <PackageReference Include="Pure.Diagram.RichRelationalModel" Version="0.1.0-preview.1.0.0" />
     <PackageReference
       Include="Pure.Diagram.RichRelationalModel.HashCodes"
       Version="0.1.0-preview.0.1.0"
