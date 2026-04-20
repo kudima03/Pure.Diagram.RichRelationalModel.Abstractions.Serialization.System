@@ -12,7 +12,7 @@
     <PackageReference Include="Pure.Diagram.RichRelationalModel" Version="0.1.0-preview.1.0.0" />
     <PackageReference
       Include="Pure.Diagram.RichRelationalModel.HashCodes"
-      Version="0.1.0-preview.0.1.0"
+      Version="0.1.0-preview.1.0.0"
     />
     <PackageReference
       Include="Pure.Primitives.Abstractions.Serialization.System"
