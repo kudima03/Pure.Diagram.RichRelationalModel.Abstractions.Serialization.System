@@ -6,19 +6,22 @@ using Pure.Primitives.Abstractions.String;
 
 namespace Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System;
 
-internal sealed record SeriesRichRelationalModelJsonModel : ISeriesRichRelationalModel
+internal sealed record DiagramSeriesRichRelationalModelJsonModel
+    : IDiagramSeriesRichRelationalModel
 {
-    public SeriesRichRelationalModelJsonModel(ISeriesRichRelationalModel model)
+    public DiagramSeriesRichRelationalModelJsonModel(
+        IDiagramSeriesRichRelationalModel model
+    )
         : this(
             model.Id,
             model.DiagramId,
-            ((ISeriesRelationalModel)model).Label,
-            ((ISeriesRelationalModel)model).Source
+            ((IDiagramSeriesRelationalModel)model).Label,
+            ((IDiagramSeriesRelationalModel)model).Source
         )
     { }
 
     [JsonConstructor]
-    public SeriesRichRelationalModelJsonModel(
+    public DiagramSeriesRichRelationalModelJsonModel(
         IGuid id,
         IGuid diagramId,
         IString label,
@@ -40,16 +43,16 @@ internal sealed record SeriesRichRelationalModelJsonModel : ISeriesRichRelationa
     public IString Source { get; }
 }
 
-public sealed class SeriesRichRelationalModelConverter
-    : JsonConverter<ISeriesRichRelationalModel>
+public sealed class DiagramSeriesRichRelationalModelConverter
+    : JsonConverter<IDiagramSeriesRichRelationalModel>
 {
-    public override ISeriesRichRelationalModel Read(
+    public override IDiagramSeriesRichRelationalModel Read(
         ref Utf8JsonReader reader,
         Type typeToConvert,
         JsonSerializerOptions options
     )
     {
-        return JsonSerializer.Deserialize<SeriesRichRelationalModelJsonModel>(
+        return JsonSerializer.Deserialize<DiagramSeriesRichRelationalModelJsonModel>(
             ref reader,
             options
         )!;
@@ -57,13 +60,13 @@ public sealed class SeriesRichRelationalModelConverter
 
     public override void Write(
         Utf8JsonWriter writer,
-        ISeriesRichRelationalModel value,
+        IDiagramSeriesRichRelationalModel value,
         JsonSerializerOptions options
     )
     {
         JsonSerializer.Serialize(
             writer,
-            new SeriesRichRelationalModelJsonModel(value),
+            new DiagramSeriesRichRelationalModelJsonModel(value),
             options
         );
     }

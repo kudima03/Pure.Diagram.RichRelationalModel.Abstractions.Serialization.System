@@ -9,7 +9,7 @@ public sealed class DiagramRichRelationalModelAbstractionsConverters
     public IEnumerator<JsonConverter> GetEnumerator()
     {
         yield return new DiagramTypeRichRelationalModelConverter();
-        yield return new SeriesRichRelationalModelConverter();
+        yield return new DiagramSeriesRichRelationalModelConverter();
         yield return new DiagramRichRelationalModelConverter();
     }
 

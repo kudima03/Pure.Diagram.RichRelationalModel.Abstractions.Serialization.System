@@ -16,7 +16,7 @@ internal sealed record DiagramRichRelationalModelJsonModel : IDiagramRichRelatio
             ((IDiagramRelationalModel)model).Description,
             model.TypeId,
             (IDiagramTypeRichRelationalModel)model.Type,
-            model.Series.Cast<ISeriesRichRelationalModel>()
+            model.Series.Cast<IDiagramSeriesRichRelationalModel>()
         )
     { }
 
@@ -27,7 +27,7 @@ internal sealed record DiagramRichRelationalModelJsonModel : IDiagramRichRelatio
         IString description,
         IGuid typeId,
         IDiagramTypeRichRelationalModel type,
-        IEnumerable<ISeriesRichRelationalModel> series
+        IEnumerable<IDiagramSeriesRichRelationalModel> series
     )
     {
         Id = id;
@@ -48,11 +48,11 @@ internal sealed record DiagramRichRelationalModelJsonModel : IDiagramRichRelatio
 
     public IDiagramTypeRichRelationalModel Type { get; }
 
-    public IEnumerable<ISeriesRichRelationalModel> Series { get; }
+    public IEnumerable<IDiagramSeriesRichRelationalModel> Series { get; }
 
     IDiagramType IDiagram.Type => Type;
 
-    IEnumerable<ISeries> IDiagram.Series => Series;
+    IEnumerable<IDiagramSeries> IDiagram.Series => Series;
 }
 
 public sealed class DiagramRichRelationalModelConverter

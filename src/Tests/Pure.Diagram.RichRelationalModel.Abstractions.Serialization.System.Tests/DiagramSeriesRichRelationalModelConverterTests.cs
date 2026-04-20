@@ -8,11 +8,11 @@ using Guid = Pure.Primitives.Guid.Guid;
 
 namespace Pure.Diagram.RichRelationalModel.Abstractions.Serialization.System.Tests;
 
-public sealed record SeriesRichRelationalModelConverterTests
+public sealed record DiagramSeriesRichRelationalModelConverterTests
 {
     private readonly JsonSerializerOptions _options;
 
-    public SeriesRichRelationalModelConverterTests()
+    public DiagramSeriesRichRelationalModelConverterTests()
     {
         _options = new JsonSerializerOptions();
 
@@ -40,7 +40,7 @@ public sealed record SeriesRichRelationalModelConverterTests
         RandomString label = new RandomString(new Char('a'), new Char('z'));
         RandomString source = new RandomString(new Char('a'), new Char('z'));
 
-        ISeriesRichRelationalModel series = new SeriesRichRelationalModel(
+        IDiagramSeriesRichRelationalModel series = new DiagramSeriesRichRelationalModel(
             id,
             diagramId,
             label,
@@ -70,7 +70,7 @@ public sealed record SeriesRichRelationalModelConverterTests
         RandomString label = new RandomString(new Char('a'), new Char('z'));
         RandomString source = new RandomString(new Char('a'), new Char('z'));
 
-        ISeriesRichRelationalModel expected = new SeriesRichRelationalModel(
+        IDiagramSeriesRichRelationalModel expected = new DiagramSeriesRichRelationalModel(
             id,
             diagramId,
             label,
@@ -87,9 +87,9 @@ public sealed record SeriesRichRelationalModelConverterTests
             """;
 
         Assert.True(
-            new SeriesRichRelationalModelHash(expected).SequenceEqual(
-                new SeriesRichRelationalModelHash(
-                    JsonSerializer.Deserialize<ISeriesRichRelationalModel>(
+            new DiagramSeriesRichRelationalModelHash(expected).SequenceEqual(
+                new DiagramSeriesRichRelationalModelHash(
+                    JsonSerializer.Deserialize<IDiagramSeriesRichRelationalModel>(
                         input,
                         _options
                     )!
@@ -101,22 +101,22 @@ public sealed record SeriesRichRelationalModelConverterTests
     [Fact]
     public void RoundTrip()
     {
-        ISeriesRichRelationalModel series = new SeriesRichRelationalModel(
+        IDiagramSeriesRichRelationalModel series = new DiagramSeriesRichRelationalModel(
             new Guid(),
             new Guid(),
             new RandomString(new Char('a'), new Char('z')),
             new RandomString(new Char('a'), new Char('z'))
         );
 
-        ISeriesRichRelationalModel deserialized =
-            JsonSerializer.Deserialize<ISeriesRichRelationalModel>(
+        IDiagramSeriesRichRelationalModel deserialized =
+            JsonSerializer.Deserialize<IDiagramSeriesRichRelationalModel>(
                 JsonSerializer.Serialize(series, _options),
                 _options
             )!;
 
         Assert.True(
-            new SeriesRichRelationalModelHash(series).SequenceEqual(
-                new SeriesRichRelationalModelHash(deserialized)
+            new DiagramSeriesRichRelationalModelHash(series).SequenceEqual(
+                new DiagramSeriesRichRelationalModelHash(deserialized)
             )
         );
     }
